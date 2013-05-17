@@ -20,7 +20,6 @@
 #include <stddef.h>
 
 #include "EEPROM_routines.h"
-#include "uart.h"
 #include "inputs.h"
 #include "sevensegment.h"
 

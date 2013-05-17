@@ -9,8 +9,11 @@
 
 #define BLINK_ENABLE
 
+#define MINUTES_HIGH_LIMIT		(99)
+#define MINUTES_LOW_LIMIT		(1)
+
 #if defined (BLINK_ENABLE)
-#define BLINK_INTERVAL	15
+#define BLINK_INTERVAL			(30)
 #endif
 
 int gTempVal;
@@ -158,8 +161,8 @@ gProgrammedMinutes = gSetMinutes;
 						gIncPressed++;							
 						if(setModeOn)
 						gSetMinutes++;
-						if(gSetMinutes>99)
-						gSetMinutes=99;
+						if(gSetMinutes>MINUTES_HIGH_LIMIT)
+						gSetMinutes=MINUTES_HIGH_LIMIT;
 						gDontUpdate=1;
 						timerStart();
 					}					
@@ -173,8 +176,8 @@ gProgrammedMinutes = gSetMinutes;
 						gDecPressed++;		
 						if(setModeOn)
 						gSetMinutes--;
-						if(gSetMinutes<0)
-						gSetMinutes=0;
+						if(gSetMinutes<MINUTES_LOW_LIMIT)
+						gSetMinutes=MINUTES_LOW_LIMIT;
 						gDontUpdate=1;
 						timerStart();
 					}					
